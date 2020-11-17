@@ -69,7 +69,7 @@ export default function() {
   });
   console.log(response.body);
 
-  sleep(10);
+  sleep(1);
 }
 
 // code change!
