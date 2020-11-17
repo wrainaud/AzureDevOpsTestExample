@@ -11,7 +11,7 @@ pool:
 
 steps:
 # Running with our extension! This will fail by threshold
-- task: k6-load-test@0
+- task: k6-load-test
   inputs:
     cloud: true
     filename: 'api.js'
