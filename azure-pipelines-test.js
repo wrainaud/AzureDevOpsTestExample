@@ -5,15 +5,12 @@ import { Counter } from "k6/metrics";
 import jsonpath from "https://jslib.k6.io/jsonpath/1.0.2/index.js";
 
 export const options = {
-  stages: [
-    { duration: "12s", target: 10 },
-    { duration: "36s", target: 10 },
-    { duration: "12s", target: 0 }
-  ],
+  duration: "1m",
+  vus: 100,
   thresholds: {
     "http_req_duration": ["p(95)<500"],
     "requests": ["count < 100"],
-    "myCounter": ["count > 10000"]
+    //"myCounter": ["count > 10000"]
   },
   ext: {
     loadimpact: {
@@ -25,8 +22,8 @@ export const options = {
     }
   }
 };
-let someMetric = new Counter("myCounter");
-let someValue = __ENV.NUMBER;
+//let someMetric = new Counter("myCounter");
+//let someValue = __ENV.NUMBER;
 
 
 export default function() {
@@ -57,8 +54,7 @@ export default function() {
   // my crocs
   response = http.get("https://test-api.loadimpact.com/my/crocodiles/", {
     headers: {
-      Authorization: `Bearer ${vars["token"]}`,
-      'api-key': "something" 
+      Authorization: `Bearer ${vars["token"]}`
     }
   });
   check(response, {
@@ -67,7 +63,7 @@ export default function() {
       return !!values.find(value => value === "Jerry");
     }
   });
-  console.log(response.body);
+  console.log(response.status);
 
   sleep(1);
 }
