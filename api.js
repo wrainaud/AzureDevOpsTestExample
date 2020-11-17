@@ -29,7 +29,7 @@ export const options = {
 export default function() {
   let response;
 
-  //someMetric.add(someValue);
+  someMetric.add(someValue);
 
   const vars = {};
 
@@ -67,5 +67,7 @@ export default function() {
 
   sleep(1);
 }
+
+// code change!
 
 //   code change!
