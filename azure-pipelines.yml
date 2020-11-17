@@ -7,17 +7,37 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'ubuntu-latest' 
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a k6 script'
+# Running with our extension! This will fail by threshold
 - task: k6-load-test@0
   inputs:
     cloud: true
     filename: 'api.js'
+    args: '-e NUMBER=1'
+  displayName: run via extension
+
+# Or run it manually! This test will not pass
+- script: |
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
+    echo "deb https://dl.bintray.com/loadimpact/deb stable main" | sudo tee -a /etc/apt/sources.list
+    sudo apt-get update
+    sudo apt-get install k6
+  displayName: Install k6 tool
+  condition: always()
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    k6 version
+  displayName: Check if k6 is installed
+  condition: always()
+
+- script:
+    k6 login cloud --token $(k6_cloud_token)
+  displayName: Authenticate
+  condition: always()
+
+- script:
+    k6 cloud api.js -e NUMBER=1000
+  displayName: run cloud test
+  condition: always()
