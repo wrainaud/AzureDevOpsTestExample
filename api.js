@@ -20,7 +20,8 @@ export const options = {
       projectID: 3113635,
       name: "Azure Pipelines Test",
       distribution: {
-        "Ashburn - US": { loadZone: "amazon:us:ashburn", percent: 100 }
+        "Ashburn - US": { loadZone: "amazon:us:ashburn", percent: 50 },
+        "Sydney - AU": { loadZone: "amazon:au:sydney", percent: 50 }
       }
     }
   }
