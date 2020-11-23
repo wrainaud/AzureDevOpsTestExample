@@ -13,7 +13,7 @@ export const options = {
   thresholds: {
     "http_req_duration": ["p(95)<500"],
     "requests": ["count < 100"],
-    //"myCounter": ["count < 100"]
+    "myCounter": ["count < 100"]
   },
   ext: {
     loadimpact: {
@@ -26,7 +26,7 @@ export const options = {
     }
   }
 };
-//let someMetric = new Counter("myCounter");
+let someMetric = new Counter("myCounter");
 let someValue = __ENV.NUMBER;
 
 
