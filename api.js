@@ -13,7 +13,7 @@ export const options = {
   thresholds: {
     "http_req_duration": ["p(95)<500"],
     "requests": ["count < 100"],
-    "myCounter": ["count > 10000"]
+    "myCounter": ["count > 100"]
   },
   ext: {
     loadimpact: {
@@ -74,4 +74,3 @@ export default function() {
 }
 
 // code change!
-// code change! BIG IMPORTANT BUG
