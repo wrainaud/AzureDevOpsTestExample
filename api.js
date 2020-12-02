@@ -13,7 +13,7 @@ export const options = {
   thresholds: {
     "http_req_duration": ["p(95)<500"],
     "requests": ["count < 100"],
-    //"myCounter": ["count < 100"]
+    "myCounter": ["count > 10000"]
   },
   ext: {
     loadimpact: {
@@ -41,7 +41,7 @@ export default function() {
   check(response, {
     "status equals 200": response => response.status.toString() === "200"
   });
-  //console.log(response.body);
+  console.log(response.body);
 
   response = http.post(
     "https://test-api.loadimpact.com/auth/token/login/",
@@ -70,7 +70,7 @@ export default function() {
   });
   console.log(response.body);
 
-  sleep(10);
+  sleep(1);
 }
 
 
