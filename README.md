@@ -3,4 +3,4 @@ Example for creating tests in Azure DevOps
 
 For demo purposes.
 
-[![Build Status](https://dev.azure.com/wrainaud/Pipeline%20Example/_apis/build/status/billrainaud.AzureDevOpsTestExample?branchName=master)](https://dev.azure.com/wrainaud/Pipeline%20Example/_build/latest?definitionId=1&branchName=master)
+[![Build Status](https://dev.azure.com/wrainaud/Pipeline%20Example/_apis/build/status/billrainaud.AzureDevOpsTestExample?branchName=main)](https://dev.azure.com/wrainaud/Pipeline%20Example/_build/latest?definitionId=1&branchName=main)
