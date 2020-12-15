@@ -3,7 +3,9 @@ Example for creating tests in Azure DevOps
 
 For demo purposes.
 
-[![Build Status](https://dev.azure.com/wrainaud/billrainaud.AzureDevOpsTestExample/_apis/build/status/wrainaud.AzureDevOpsTestExample?branchName=main)](https://dev.azure.com/wrainaud/billrainaud.AzureDevOpsTestExample/_build/latest?definitionId=3&branchName=main)
+<a href="https://dev.azure.com/wrainaud/billrainaud.AzureDevOpsTestExample/_apis/build/status/wrainaud.AzureDevOpsTestExample?branchName=main"><img src="https://dev.azure.com/wrainaud/billrainaud.AzureDevOpsTestExample/_build/latest?definitionId=3&branchName=main" alt="Azure DevOps Pipeline Build Status"></a>
+
+[![Build Status]()]()
 
 Support
 -------
